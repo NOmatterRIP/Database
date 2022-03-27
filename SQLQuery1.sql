@@ -2,15 +2,15 @@ SELECT * FROM book
 
 SELECT * 
 FROM book
-WHERE (publisher = '±Â½ºÆ÷Ã÷'
-OR publisher = '´ëÇÑ¹Ìµğ¾î')
+WHERE (publisher = 'êµ¿ìŠ¤í¬ì¸ '
+OR publisher = 'ëŒ€í•œë¯¸ë””ì–´') <- ê´„í˜¸ì—†ì–´ë„ë¨
 AND price <=8000;
 
 SELECT * FROM book
 ORDER BY price DESC, publisher ASC;
 SELECT bookid, bookname, publisher, price
 FROM book
-WHERE bookname LIKE '_±¸%'
+WHERE bookname LIKE '_êµ¬%'
 AND price < 20000
 ORDER BY publisher DESC, price ASC;
 
@@ -21,18 +21,18 @@ ORDER BY price DESC;
 
 SELECT *
 FROM book
-WHERE publisher = '´ëÇÑ¹Ìµğ¾î' AND price >= 20000 AND price <=30000;
+WHERE publisher = 'ëŒ€í•œë¯¸ë””ì–´' AND price >= 20000 AND price <=30000;
 
-SELECT count(*) AS '±Ç¼ö' FROM book;
+SELECT count(*) AS 'ê¶Œìˆ˜' FROM book;
 
 SELECT MIN(price)
 FROM book;
 
-SELECT custid '°í°´¹øÈ£', COUNT(*) '±Ç¼ö'
+SELECT custid 'ê³ ê°ë²ˆí˜¸', COUNT(*) 'ê¶Œìˆ˜'
 FROM orders
 GROUP BY custid;
 
-SELECT bookid, 'µµ¼­¹øÈ£', SUM(saleprice)
+SELECT bookid, 'ë„ì„œë²ˆí˜¸', SUM(saleprice)
 FROM orders
 GROUP BY bookid;
 
@@ -42,7 +42,7 @@ GROUP BY publisher
 
 SELECT publisher, COUNT(*), AVG(price), MAX(price)
 FROM book
-WHERE publisher IN ('±Â½ºÆ÷Ã÷', '´ëÇÑ¹Ìµğ¾î')
+WHERE publisher IN ('êµ¿ìŠ¤í¬ì¸ ', 'ëŒ€í•œë¯¸ë””ì–´')
 GROUP BY publisher;
 
 SELECT bookid, SUM(saleprice)
